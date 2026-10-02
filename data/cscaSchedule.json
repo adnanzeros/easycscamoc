@@ -1,0 +1,221 @@
+{
+  "timezone": {
+    "primary": {
+      "name": "Beijing Time",
+      "iana": "Asia/Shanghai",
+      "utcOffset": "+08:00"
+    },
+    "secondary": {
+      "name": "Dhaka Time",
+      "iana": "Asia/Dhaka",
+      "utcOffset": "+06:00"
+    }
+  },
+
+  "yearRange": "2026-2027",
+
+  "notice": {
+    "en": "According to rules and regulations, the date and time may change.",
+    "bn": "নিয়ম ও বিধি অনুযায়ী পরীক্ষার তারিখ ও সময় পরিবর্তিত হতে পারে।"
+  },
+
+  "sessions": [
+    {
+      "id": "2026-11-14-professional-chinese",
+      "date": "2026-11-14",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2026-11-14-mathematics",
+      "date": "2026-11-14",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2026-11-15-physics",
+      "date": "2026-11-15",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2026-11-15-chemistry",
+      "date": "2026-11-15",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    },
+
+    {
+      "id": "2026-12-19-professional-chinese",
+      "date": "2026-12-19",
+      "startTime": "08:00",
+      "endTime": "09:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2026-12-19-mathematics",
+      "date": "2026-12-19",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2026-12-20-physics",
+      "date": "2026-12-20",
+      "startTime": "08:00",
+      "endTime": "09:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2026-12-20-chemistry",
+      "date": "2026-12-20",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    },
+
+    {
+      "id": "2027-01-23-professional-chinese",
+      "date": "2027-01-23",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2027-01-23-mathematics",
+      "date": "2027-01-23",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-01-24-physics",
+      "date": "2027-01-24",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-01-24-chemistry",
+      "date": "2027-01-24",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    },
+
+    {
+      "id": "2027-03-13-professional-chinese",
+      "date": "2027-03-13",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2027-03-13-mathematics",
+      "date": "2027-03-13",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-03-14-physics",
+      "date": "2027-03-14",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-03-14-chemistry",
+      "date": "2027-03-14",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    },
+
+    {
+      "id": "2027-04-24-professional-chinese",
+      "date": "2027-04-24",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2027-04-24-mathematics",
+      "date": "2027-04-24",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-04-25-physics",
+      "date": "2027-04-25",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-04-25-chemistry",
+      "date": "2027-04-25",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    },
+
+    {
+      "id": "2027-06-26-professional-chinese",
+      "date": "2027-06-26",
+      "startTime": "08:00",
+      "endTime": "09:30",
+      "subject": "Professional Chinese",
+      "durationMinutes": 90
+    },
+    {
+      "id": "2027-06-26-mathematics",
+      "date": "2027-06-26",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "subject": "Mathematics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-06-27-physics",
+      "date": "2027-06-27",
+      "startTime": "08:00",
+      "endTime": "09:00",
+      "subject": "Physics",
+      "durationMinutes": 60
+    },
+    {
+      "id": "2027-06-27-chemistry",
+      "date": "2027-06-27",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "subject": "Chemistry",
+      "durationMinutes": 60
+    }
+  ]
+}

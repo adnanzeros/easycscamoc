@@ -1,0 +1,1602 @@
+/* =========================================================
+   CSCA SCHEDULE PAGE
+   EasyCSCA
+   ========================================================= */
+
+.schedule-page {
+  width: 100%;
+  min-height: 100vh;
+
+  /* Important:
+     If your global main has padding-top equal to navbar height,
+     this removes that unwanted empty space. */
+  margin-top: calc(-1 * var(--navbar-height));
+
+  background: var(--brand-red-pale);
+  color: var(--text-primary);
+
+  overflow-x: hidden;
+}
+
+.schedule-container {
+  width: min(calc(100% - 40px), var(--container-width));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   NOTICE
+   Directly below navbar
+   ========================================================= */
+
+.schedule-notice {
+  width: 100%;
+
+  margin: 5;
+  padding: 2;
+
+  background: var(--white);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.schedule-notice-inner {
+  width: 100%;
+
+  min-height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 7px 15px;
+
+  text-align: center;
+}
+
+.schedule-notice-label {
+  flex: 0 0 auto;
+
+  color: var(--brand-red);
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+}
+
+.schedule-notice p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.schedule-hero {
+  position: relative;
+
+  margin: 0;
+  padding: 78px 0 105px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(255, 255, 255, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      var(--brand-red-deep),
+      var(--brand-red)
+    );
+
+  color: var(--white);
+
+  overflow: hidden;
+}
+
+.schedule-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  right: -150px;
+  top: -170px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+}
+
+.schedule-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -270px;
+  bottom: -370px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+.schedule-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 780px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.schedule-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+.schedule-badge-dot {
+  width: 7px;
+  height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+.schedule-hero h1 {
+  margin: 24px 0 15px;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1.04;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 800;
+}
+
+.schedule-hero-content > p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+.schedule-language-switcher {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  margin-top: 28px;
+
+  padding: 4px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.schedule-language-switcher button {
+  border: 0;
+
+  border-radius: 999px;
+
+  padding: 8px 17px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.schedule-language-switcher button:hover {
+  color: var(--white);
+}
+
+.schedule-language-switcher button.active {
+  background: var(--white);
+
+  color: var(--brand-red);
+}
+
+
+/* =========================================================
+   NEXT EXAM
+   ========================================================= */
+
+.next-exam-section {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: -55px;
+
+  padding-bottom: 75px;
+}
+
+.next-exam-card {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-card);
+}
+
+.next-exam-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.next-exam-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: var(--brand-red);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.next-exam-top h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 34px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.next-exam-date {
+  margin: 9px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+}
+
+.next-exam-duration {
+  min-width: 110px;
+
+  padding: 15px;
+
+  border-radius: 16px;
+
+  background: var(--brand-red-soft);
+
+  text-align: center;
+}
+
+.next-exam-duration span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.next-exam-duration strong {
+  display: inline-block;
+
+  color: var(--brand-red);
+
+  font-size: 27px;
+
+  line-height: 1;
+}
+
+.next-exam-duration small {
+  margin-left: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-wrapper {
+  margin-top: 34px;
+
+  padding: 25px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-red-deep),
+      var(--brand-red)
+    );
+
+  text-align: center;
+}
+
+.countdown-heading {
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.countdown-grid {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.countdown-box {
+  min-width: 105px;
+}
+
+.countdown-box strong {
+  display: block;
+
+  color: var(--white);
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-box span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.countdown-separator {
+  margin-top: -17px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 28px;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   TIME COMPARISON
+   ========================================================= */
+
+.time-comparison {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin-top: 18px;
+}
+
+.time-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  background: var(--brand-red-pale);
+}
+
+.time-card-icon {
+  display: grid;
+
+  flex: 0 0 43px;
+
+  width: 43px;
+  height: 43px;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: var(--white);
+
+  font-size: 21px;
+
+  box-shadow:
+    0 3px 12px rgba(114, 16, 16, 0.07);
+}
+
+.time-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.time-card strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 17px;
+
+  line-height: 1.3;
+}
+
+.time-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.full-schedule-section {
+  padding: 20px 0 90px;
+}
+
+.section-heading {
+  max-width: 650px;
+
+  margin: 0 auto 40px;
+
+  text-align: center;
+}
+
+.section-heading > span {
+  color: var(--brand-red);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 9px 0 10px;
+
+  color: var(--text-primary);
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MONTH CARDS
+   ========================================================= */
+
+.schedule-months {
+  display: grid;
+
+  gap: 25px;
+}
+
+.month-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-card);
+}
+
+.month-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 23px 26px;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--brand-red-soft),
+      var(--white)
+    );
+}
+
+.month-card-header span {
+  color: var(--brand-red);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.month-card-header h3 {
+  margin: 5px 0 0;
+
+  color: var(--text-primary);
+
+  font-size: 24px;
+
+  font-weight: 800;
+}
+
+.month-count {
+  display: grid;
+
+  width: 38px;
+  height: 38px;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--brand-red);
+
+  color: var(--white);
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DESKTOP TABLE
+   ========================================================= */
+
+.schedule-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  padding: 15px 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: var(--brand-red-pale);
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-align: left;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.schedule-table td {
+  padding: 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  vertical-align: middle;
+}
+
+.schedule-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.schedule-table tbody tr {
+  transition: background var(--transition);
+}
+
+.schedule-table tbody tr:hover {
+  background: var(--brand-red-pale);
+}
+
+.schedule-table tbody tr.past-session {
+  opacity: 0.48;
+}
+
+.subject-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 170px;
+}
+
+.subject-dot {
+  width: 8px;
+  height: 8px;
+
+  flex: 0 0 8px;
+
+  border-radius: 50%;
+
+  background: var(--brand-red);
+}
+
+.subject-cell strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+.date-cell strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+}
+
+.date-cell small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+}
+
+.table-time strong {
+  color: var(--text-primary);
+
+  font-size: 14px;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.table-time span {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+.table-time small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.dhaka-time strong {
+  color: var(--brand-red);
+}
+
+.duration-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: var(--brand-red-light);
+
+  color: var(--brand-red);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE SESSION CARDS
+   ========================================================= */
+
+.mobile-schedule-list {
+  display: none;
+}
+
+.mobile-session-card {
+  padding: 18px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-session-card:last-child {
+  border-bottom: 0;
+}
+
+.mobile-session-card.past-session {
+  opacity: 0.48;
+}
+
+.mobile-session-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.mobile-subject {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--brand-red);
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.mobile-session-top strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.mobile-time-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+.mobile-time-grid > div {
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: var(--brand-red-pale);
+}
+
+.mobile-time-grid span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.mobile-time-grid strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   IMPORTANT INFORMATION
+   ========================================================= */
+
+.important-section {
+  padding: 0 0 90px;
+}
+
+.important-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.important-card {
+  padding: 28px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-card);
+
+  text-align: center;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.important-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 35px rgba(114, 16, 16, 0.1);
+}
+
+.important-icon {
+  display: grid;
+
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 16px;
+
+  place-items: center;
+
+  border-radius: 15px;
+
+  background: var(--brand-red-soft);
+
+  font-size: 25px;
+}
+
+.important-card h3 {
+  margin: 0 0 9px;
+
+  color: var(--text-primary);
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+.important-card p {
+  max-width: 400px;
+
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.schedule-cta {
+  padding: 0 0 90px;
+}
+
+.schedule-cta-inner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 42px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-red-deep),
+      var(--brand-red)
+    );
+
+  color: var(--white);
+
+  box-shadow:
+    0 15px 40px rgba(114, 16, 16, 0.16);
+}
+
+.schedule-cta-inner > div:first-child {
+  max-width: 680px;
+}
+
+.schedule-cta-inner span {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.schedule-cta-inner h2 {
+  margin: 9px 0;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.schedule-cta-inner p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.schedule-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  flex: 0 0 auto;
+
+  min-width: 175px;
+
+  padding: 13px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 12px;
+
+  background: var(--white);
+
+  color: var(--brand-red);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.schedule-cta-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-cta-button span {
+  color: var(--brand-red);
+
+  font-size: 18px;
+
+  letter-spacing: 0;
+
+  text-transform: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .schedule-hero {
+    padding: 70px 0 90px;
+  }
+
+  .schedule-hero h1 {
+    font-size: clamp(38px, 8vw, 58px);
+  }
+
+  .next-exam-card {
+    padding: 30px;
+  }
+
+  .countdown-box {
+    min-width: 85px;
+  }
+
+  .countdown-box strong {
+    font-size: 36px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .schedule-cta-inner {
+    padding: 34px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .schedule-container {
+    width: min(calc(100% - 28px), var(--container-width));
+  }
+
+
+  /* ---------------------------------------------------------
+     NOTICE
+     --------------------------------------------------------- */
+
+  .schedule-notice-inner {
+    min-height: 32px;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 6px 10px;
+  }
+
+  .schedule-notice-label {
+    font-size: 9px;
+
+    letter-spacing: 0.4px;
+  }
+
+  .schedule-notice p {
+    font-size: 10px;
+
+    line-height: 1.3;
+  }
+
+
+  /* ---------------------------------------------------------
+     HERO
+     --------------------------------------------------------- */
+
+  .schedule-hero {
+    padding: 60px 0 80px;
+  }
+
+  .schedule-hero::before {
+    width: 250px;
+    height: 250px;
+
+    right: -130px;
+    top: -120px;
+  }
+
+  .schedule-hero::after {
+    width: 350px;
+    height: 350px;
+
+    left: -220px;
+    bottom: -270px;
+  }
+
+  .schedule-badge {
+    padding: 7px 11px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+  .schedule-hero h1 {
+    margin-top: 20px;
+
+    font-size: clamp(34px, 10vw, 48px);
+
+    letter-spacing: -1.5px;
+  }
+
+  .schedule-hero-content > p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .schedule-language-switcher {
+    margin-top: 22px;
+  }
+
+  .schedule-language-switcher button {
+    padding: 7px 14px;
+
+    font-size: 12px;
+  }
+
+
+  /* ---------------------------------------------------------
+     NEXT EXAM
+     --------------------------------------------------------- */
+
+  .next-exam-section {
+    margin-top: -35px;
+
+    padding-bottom: 55px;
+  }
+
+  .next-exam-card {
+    padding: 22px;
+
+    border-radius: 19px;
+  }
+
+  .next-exam-top {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .next-exam-top h2 {
+    font-size: 27px;
+  }
+
+  .next-exam-date {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .next-exam-duration {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 13px;
+  }
+
+
+  /* ---------------------------------------------------------
+     COUNTDOWN
+     --------------------------------------------------------- */
+
+  .countdown-wrapper {
+    margin-top: 22px;
+
+    padding: 20px 10px;
+
+    border-radius: 16px;
+  }
+
+  .countdown-heading {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .countdown-grid {
+    gap: 4px;
+  }
+
+  .countdown-box {
+    min-width: 55px;
+  }
+
+  .countdown-box strong {
+    font-size: 26px;
+  }
+
+  .countdown-box span {
+    margin-top: 6px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .countdown-separator {
+    margin-top: -14px;
+
+    font-size: 20px;
+  }
+
+
+  /* ---------------------------------------------------------
+     TIME COMPARISON
+     --------------------------------------------------------- */
+
+  .time-comparison {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .time-card {
+    padding: 14px;
+  }
+
+  .time-card strong {
+    font-size: 14px;
+  }
+
+
+  /* ---------------------------------------------------------
+     SECTION HEADING
+     --------------------------------------------------------- */
+
+  .full-schedule-section {
+    padding: 10px 0 60px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .section-heading p {
+    font-size: 13px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MONTH
+     --------------------------------------------------------- */
+
+  .month-card {
+    border-radius: 16px;
+  }
+
+  .month-card-header {
+    padding: 18px;
+  }
+
+  .month-card-header h3 {
+    font-size: 21px;
+  }
+
+  .month-count {
+    width: 34px;
+    height: 34px;
+
+    font-size: 12px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE SCHEDULE
+     --------------------------------------------------------- */
+
+  .schedule-table-wrapper {
+    display: none;
+  }
+
+  .mobile-schedule-list {
+    display: block;
+  }
+
+  .mobile-session-card {
+    padding: 17px;
+  }
+
+  .mobile-time-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  /* ---------------------------------------------------------
+     IMPORTANT
+     --------------------------------------------------------- */
+
+  .important-section {
+    padding-bottom: 60px;
+  }
+
+  .important-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .important-card {
+    padding: 23px 18px;
+  }
+
+
+  /* ---------------------------------------------------------
+     CTA
+     --------------------------------------------------------- */
+
+  .schedule-cta {
+    padding-bottom: 60px;
+  }
+
+  .schedule-cta-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 28px 22px;
+
+    border-radius: 19px;
+  }
+
+  .schedule-cta-inner h2 {
+    font-size: 25px;
+  }
+
+  .schedule-cta-inner p {
+    font-size: 13px;
+  }
+
+  .schedule-cta-button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .schedule-container {
+    width: min(calc(100% - 22px), var(--container-width));
+  }
+
+
+  /* Notice */
+
+  .schedule-notice-inner {
+    min-height: 30px;
+
+    gap: 4px;
+
+    padding: 5px 8px;
+  }
+
+  .schedule-notice-label {
+    font-size: 8px;
+  }
+
+  .schedule-notice p {
+    font-size: 9px;
+  }
+
+
+  /* Hero */
+
+  .schedule-hero {
+    padding-top: 50px;
+
+    padding-bottom: 70px;
+  }
+
+  .schedule-hero h1 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+  }
+
+  .schedule-hero-content > p {
+    font-size: 13px;
+  }
+
+
+  /* Next exam */
+
+  .next-exam-card {
+    padding: 18px;
+  }
+
+
+  /* Countdown */
+
+  .countdown-box {
+    min-width: 48px;
+  }
+
+  .countdown-box strong {
+    font-size: 23px;
+  }
+
+  .countdown-separator {
+    font-size: 17px;
+  }
+
+
+  /* Month */
+
+  .month-card-header {
+    padding: 16px;
+  }
+
+  .mobile-session-top {
+    gap: 8px;
+  }
+
+  .duration-badge {
+    padding: 6px 8px;
+
+    font-size: 9px;
+  }
+}

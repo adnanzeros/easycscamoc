@@ -1,0 +1,38 @@
+{
+  "name": "CSCA Math Unlimited Mock Generator",
+  "version": "2.0.0",
+  "questionLanguage": "en",
+  "explanationLanguages": ["en", "bn"],
+  "exam": {
+    "questions": 48,
+    "minutes": 50,
+    "defaultMode": "single",
+    "availableModes": ["single", "all"],
+    "distribution": {
+      "Sets & Inequalities": 12,
+      "Functions & Calculus": 12,
+      "Geometry & Algebra": 12,
+      "Probability & Statistics": 12
+    }
+  },
+  "generation": {
+    "method": "seeded deterministic random generation",
+    "externalApiRequired": false,
+    "practicalGeneration": "Each exam number/seed generates a fresh 48-question instance from parameterized templates.",
+    "duplicateNote": "This is practically unlimited for the app, but mathematically no finite random template system can guarantee infinite unique questions. A duplicate can be detected and regenerated if needed."
+  },
+  "questionSchema": {
+    "question": "English",
+    "options": "English",
+    "correctOption": "A|B|C|D",
+    "explanation": {
+      "en": "English explanation",
+      "bn": "Bangla explanation"
+    }
+  },
+  "sourceBasis": "The current 48-concept bank is aligned to the uploaded CSCA Mathematics syllabus structure represented in the project files: Sets & Inequalities, Functions & Calculus, Geometry & Algebra, Probability & Statistics.",
+  "implementation": {
+    "engineFile": "mathQuestionGenerator.ts",
+    "configFile": "mathQuestionGenerator.config.json"
+  }
+}
