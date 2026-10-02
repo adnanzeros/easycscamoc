@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 
@@ -385,7 +384,7 @@ export default function RootLayout({
                       <p>
                         <span className="lang-en">
                           Have a question, suggestion or something to tell us?
-                          We'd love to hear from you.
+                          We&apos;d love to hear from you.
                         </span>
 
                         <span className="lang-bn">
@@ -399,13 +398,11 @@ export default function RootLayout({
                     ================================================= */}
 
                     <form className="contact-form">
-                      {/* ACCESS KEY */}
-
-                      <input
-                        type="hidden"
-                        name="access_key"
-                        value={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY}
-                      />
+                      {/* =================================================
+                          IMPORTANT:
+                          NO WEB3FORMS ACCESS KEY HERE.
+                          The key is server-side only.
+                      ================================================= */}
 
                       {/* SUBJECT */}
 
@@ -534,6 +531,7 @@ export default function RootLayout({
                   <div
                     className="contact-thankyou-view"
                     id="contact-thankyou-view"
+                    hidden
                     aria-live="polite"
                     aria-hidden="true"
                   >
@@ -1110,12 +1108,19 @@ export default function RootLayout({
                           new FormData(form);
 
                         /* =================================================
-                           WEB3FORMS
+                           SEND TO OUR NEXT.JS SERVER API
+
+                           IMPORTANT:
+                           The Web3Forms access key is NOT sent
+                           from the browser.
+
+                           The server route gets it from:
+                           process.env.WEB3FORMS_ACCESS_KEY
                         ================================================= */
 
                         var response =
                           await fetch(
-                            'https://api.web3forms.com/submit',
+                            '/api/contact',
                             {
                               method: 'POST',
 
@@ -1128,8 +1133,17 @@ export default function RootLayout({
                             }
                           );
 
+                        /* =================================================
+                           READ RESPONSE
+                        ================================================= */
+
                         var result =
                           await response.json();
+
+                        console.log(
+                          'Contact API response:',
+                          result
+                        );
 
                         /* =================================================
                            SUCCESS
@@ -1173,10 +1187,9 @@ export default function RootLayout({
                           error
                         );
 
-                        /*
-                         Return to normal form view
-                         and show error inside it.
-                        */
+                        /* =================================================
+                           RETURN TO NORMAL FORM
+                        ================================================= */
 
                         formView.hidden = false;
 
@@ -1193,6 +1206,8 @@ export default function RootLayout({
                               'data-language'
                             ) || 'en';
 
+                        /* Remove old error */
+
                         var oldError =
                           document.getElementById(
                             'contact-form-error'
@@ -1201,6 +1216,10 @@ export default function RootLayout({
                         if (oldError) {
                           oldError.remove();
                         }
+
+                        /* =================================================
+                           ERROR MESSAGE
+                        ================================================= */
 
                         var errorBox =
                           document.createElement(
@@ -1233,7 +1252,9 @@ export default function RootLayout({
                           submitButton
                         );
 
-                        /* RESTORE BUTTON */
+                        /* =================================================
+                           RESTORE BUTTON
+                        ================================================= */
 
                         submitButton.disabled =
                           false;
