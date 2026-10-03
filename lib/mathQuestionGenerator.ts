@@ -40,7 +40,7 @@ export interface MathMockExam {
   examNumber: number;
   title: string;
   subject: 'Mathematics';
-  durationMinutes: 50;
+  minutes: 50;
   totalQuestions: 48;
   mode: QuizMode;
   questions: MathQuestion[];
